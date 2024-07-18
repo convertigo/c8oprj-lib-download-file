@@ -1,3 +1,4 @@
+comment: Action to trigger a file download in your Application.
 ↓get_file [ngx.components.UICustomAction-1721295428035]: 
   actionValue: 
     - xmlizable: 
@@ -6,8 +7,12 @@
         →: |
           '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
           		const filepath = encodeURIComponent(vars.filepath);
-          		page.c8o.log.warn(page.c8o.endpoint+"/.bin?__sequence=demo_lib_usage&file="+filepath);
-          		window.open(page.c8o.endpoint+"/.bin?__sequence=demo_lib_usage&file="+filepath, "_self");
+          		const target = vars.target;
+          		if(filepath && filepath != "" && target && target != ""){
+          			window.open(page.c8o.endpoint+"/.bin?__sequence="+target+"&file_path="+filepath, "_self");
+          		} else {
+          			page.c8o.log.warn("Mandatory variables are missing!");
+          		}
           		resolve();
           '
   ↓filepath [ngx.components.UIControlVariable-1721295593251]: 
@@ -15,4 +20,12 @@
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.file_path","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓target [ngx.components.UIControlVariable-1721298971739]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.target_sequence","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓file_path [ngx.components.UIStackVariable-1721296673363]: 
+  comment: Absolute file path to download from Convertigo Server filesystem.
+↓target_sequence [ngx.components.UIStackVariable-1721298935100]: 
+  comment: Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.

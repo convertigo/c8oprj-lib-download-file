@@ -99,7 +99,8 @@ Absolute path to the file to download.
 
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/core/images/mobileapplication_color_16x16.png?raw=true "MobileApplication") Application
 
-Describes the mobile application global properties
+The shared action <b>getFile</b> is used to trigger a download file in a Convertigo NGX Application.<br>
+Drag and Drop the <b>getFile</b> shared action in an event (onClick of a button, for example) and set the <b>file _path</b> variable to the path of the file to download from Convertigo Server filesystem and the <b>target_sequence</b> variable to your main sequence.
 
 <details><summary><span style="color:DarkGoldenRod"><i>Pages</i></span></summary><blockquote><p>
 
@@ -114,7 +115,7 @@ Describes the mobile application global properties
 
 ### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uiactionstack_color_16x16.png?raw=true "UIActionStack") getFile
 
-
+Action to trigger a file download in your Application.
 
 <span style="color:DarkGoldenRod">Variables</span>
 
@@ -132,7 +133,15 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uistackvariable_16x16.png?raw=true "  alt="UIStackVariable" >&nbsp;file_path
 </td>
 <td>
-
+Absolute file path to download from Convertigo Server filesystem.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uistackvariable_16x16.png?raw=true "  alt="UIStackVariable" >&nbsp;target_sequence
+</td>
+<td>
+Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.
 </td>
 </tr>
 </table>

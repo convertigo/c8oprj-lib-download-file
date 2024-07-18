@@ -80,6 +80,12 @@ title: First page
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'C:/pdf_repository/output.pdf'
+        ↓target_sequence [ngx.components.UIControlVariable-1721299449998]: 
+          comment: Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:'demo_lib_usage'
 ↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
   beanData: '{"ionBean":"Footer"}'
   comment: Page footer

@@ -79,11 +79,14 @@ Private sequence to be called from a parent sequence. The parent sequence must b
 
 ## Mobile Library
 
-Describes the mobile application global properties
+The shared action <b>getFile</b> is used to trigger a download file in a Convertigo NGX Application.<br>
+Drag and Drop the <b>getFile</b> shared action in an event (onClick of a button, for example) and set the <b>file _path</b> variable to the path of the file to download from Convertigo Server filesystem and the <b>target_sequence</b> variable to your main sequence.
 
 ### Shared Actions
 
 #### getFile
+
+Action to trigger a file download in your Application.
 
 **variables**
 
@@ -92,7 +95,10 @@ Describes the mobile application global properties
 <th>name</th><th>comment</th>
 </tr>
 <tr>
-<td>file_path</td><td></td>
+<td>file_path</td><td>Absolute file path to download from Convertigo Server filesystem.</td>
+</tr>
+<tr>
+<td>target_sequence</td><td>Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.</td>
 </tr>
 </table>
 

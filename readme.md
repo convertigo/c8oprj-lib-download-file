@@ -3,12 +3,15 @@
 
 # lib_download_file
 
-Library to trigger a file download from a sequence called with the .bin requester.
+Library to trigger a file download from a sequence called with the .bin requester. 
 
 
 For more technical informations : [documentation](./project.md)
 
 - [Installation](#installation)
+- [Sequences](#sequences)
+    - [demo_lib_usage](#demo_lib_usage)
+    - [get_file](#get_file)
 - [Mobile Library](#mobile-library)
     - [Shared Actions](#shared-actions)
         - [getFile](#getfile)
@@ -39,6 +42,40 @@ For more technical informations : [documentation](./project.md)
     </table>
 3. Click the `Finish` button. This will automatically import the __lib_download_file__ project
 
+
+## Sequences
+
+### demo_lib_usage
+
+Demo sequence to show the get_file sequence usage
+
+**variables**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>file</td><td>Absolute path to the file to download.<br>
+Or use './/' to a file path relative to project folder.<br>
+Or use './' to a file path relative to workspace folder.</td>
+</tr>
+</table>
+
+### get_file
+
+Private sequence to be called from a parent sequence. The parent sequence must be called with .bin requester.
+
+**variables**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>file_path</td><td>Absolute path to the file to download.</td>
+</tr>
+</table>
 
 ## Mobile Library
 

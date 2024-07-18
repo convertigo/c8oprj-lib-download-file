@@ -1,6 +1,6 @@
 ↑convertigo: 8.1.0.m006
 ↓lib_download_file [core.Project]: 
-  comment: Library to trigger a file download from a sequence called with the .bin requester.
+  comment: Library to trigger a file download from a sequence called with the .bin requester. 
   corsOrigin: =Origin
   version: 1.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml

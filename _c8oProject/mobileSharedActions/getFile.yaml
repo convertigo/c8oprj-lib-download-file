@@ -26,6 +26,6 @@ comment: Action to trigger a file download in your Application.
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.callback","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓file [ngx.components.UIStackVariable-1721296673363]: 
-  comment: Absolute file path to download from Convertigo Server filesystem.
+  comment: The path to a file on the server to download. The path can be absolute , relative to the project (.//) or relative to the workspace (./) 
 ↓callback [ngx.components.UIStackVariable-1721298935100]: 
-  comment: Callback sequence. This is the parent sequence that finally calls the get_file sequence to perform the file download.
+  comment: Callback sequence. This is the parent sequence performing the control business logic that finally calls the get_file sequence to perform the file download.

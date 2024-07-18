@@ -76,6 +76,7 @@ title: First page
         stack: lib_download_file.Application.NgxApp.getFile
         tagName: InvokeSharedAction
         ↓file [ngx.components.UIControlVariable-1721296865424]: 
+          comment: We will download a 'output.pdf' file located in the root of the project as it is prefixed by './/'
           varValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType

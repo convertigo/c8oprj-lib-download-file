@@ -6,7 +6,7 @@
 This library will enable your applications to download files held on Convertigo server.
 
 ## Purpose
-In many applications, it is useful to provide buttons or links to trigger a file download of a file (PDF, Document, Photo etc ... ) generated or held on a file system accessible by a Convertigo server. By default, Convertigo can only serve files located in the project workspace, without controlling access to these file. If you want to serve files located outside the workspace and want a fined grained control with some business logic to enable or not the download, you should use this library.
+In many applications, it is useful to provide buttons or links to trigger a download of a file (PDF, Document, Photo etc ... ) generated or held on a file system accessible by a Convertigo server. By default, Convertigo can only serve files located in the project workspace, without controlling access to these file. If you want to serve files located outside the workspace and want a fined grained control with some business logic to enable or not the download, you should use this library.
 
 ## Usage
 The back-end part of the library is the **get_file** sequence. This is a **private** sequence so it cannot be called directly by a client. You must create your own sequence controlling the business logic and if the user is enabled to do so call the **get_file** sequence within you own custom sequence.

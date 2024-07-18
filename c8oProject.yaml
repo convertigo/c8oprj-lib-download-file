@@ -13,8 +13,6 @@
     
     On the Front-end side, you must trigger a file download by calling this custom sequence. To do so the library  provides a **getFile** SharedAction you can use within your project. A Sample application with a "Download File" button is provided showing how to call this Shared Action from your project.
     
-    
-    
     '
   corsOrigin: =Origin
   version: 1.0

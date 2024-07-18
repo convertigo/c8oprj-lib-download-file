@@ -15,8 +15,6 @@ On the Front-end side, you must trigger a file download by calling this custom s
 
 
 
-
-
 <details><summary><span style="color:DarkGoldenRod"><i>Connectors</i></span></summary><blockquote><p>
 
 

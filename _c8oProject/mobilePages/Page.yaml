@@ -1,5 +1,4 @@
 ↑isRoot: true
-comment: My First Page as root page
 preloadPriority: high
 scriptContent: 
   - xmlizable: 

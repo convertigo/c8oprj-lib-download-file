@@ -1,8 +1,13 @@
 ↑convertigo: 8.1.0.m006
 ↓lib_download_file [core.Project]: 
-  comment: Convertigo NGX builder Project
+  comment: Library to trigger a file download from a sequence called with the .bin requester.
   corsOrigin: =Origin
+  version: 1.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
+  ↓demo_lib_usage [sequences.GenericSequence]: 🗏 sequences/demo_lib_usage.yaml
+  ↓get_file [sequences.GenericSequence]: 🗏 sequences/get_file.yaml
+  ↓lib_downloadFile_reference [references.ProjectSchemaReference]: 
+    projectName: lib_downloadFile=https://github.com/convertigo/c8oprj-lib-downloadfile.git:branch=master
   ↓Project_reference [references.ProjectSchemaReference]: 
     comment: ngx builder template
     projectName: mobilebuilder_tpl_8_1_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_1_0_ngx.zip

@@ -60,6 +60,27 @@ title: First page
   beanData: '{"ionBean":"Content"}'
   comment: Page content
   tagName: ion-content
+  ↓Button [ngx.components.UIDynamicElement-1721295397940]: 
+    beanData: '{"ionBean":"Button"}'
+    tagName: ion-button
+    ↓Label [ngx.components.UIDynamicElement-1721295397935]: 
+      beanData: '{"ionBean":"Label"}'
+      tagName: ion-label
+      ↓some_text [ngx.components.UIText-1721295397937]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Download file
+    ↓attr [ngx.components.UIControlEvent-1721295397939]: 
+      ↓InvokeSharedAction [ngx.components.UIDynamicInvoke-1721296861776]: 
+        beanData: '{"ionBean":"InvokeAction"}'
+        stack: lib_download_file.Application.NgxApp.getFile
+        tagName: InvokeSharedAction
+        ↓file_path [ngx.components.UIControlVariable-1721296865424]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:'C:/pdf_repository/output.pdf'
 ↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
   beanData: '{"ionBean":"Footer"}'
   comment: Page footer

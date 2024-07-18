@@ -1,0 +1,93 @@
+accessibility: Private
+comment: Private sequence to be called from a parent sequence. The parent sequence must be called with .bin requester.
+↓jIf [steps.IfStep-1721295245329]: 
+  condition: file_path == ""
+  ↓Error_structure [steps.XMLErrorStep-1721295245332]: 
+    code: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: '-1'
+    details: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: The file path value can not be an empty string.
+    message: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: File path is empty
+  ↓Return [steps.ReturnStep-1721295245335]: 
+↓IfFileExistsThenElse [steps.IfFileExistThenElseStep-1721295245338]: 
+  condition: file_path
+  ↓jThen [steps.ThenStep-1721295245341]: 
+    ↓get_file_attributes [steps.SimpleStep-1721295245344]: 
+      expression: |
+        'isSuccess = false;
+        file_type = "application/octet-stream";
+        try {
+        	source = java.nio.file.Paths.get(file_path);
+        	log.debug("source: "+source);
+        	
+        	file_name = source.getFileName().toString();	
+        	log.debug("file_name: "+file_name);
+        	
+        	file_type = java.nio.file.Files.probeContentType(source);
+        	log.debug("type: "+file_type);
+        	
+        	file_size = java.nio.file.Files.size(source);
+        	log.debug("file_size: "+file_size);
+        	
+        	if (java.nio.file.Files.exists(source)){
+        		isSuccess = true;
+        	}
+        	
+        } catch(e){
+        	log.warn(e.message);
+        	isSuccess = false;
+        }
+        '
+    ↓jIf [steps.IfStep-1721295245347]: 
+      condition: isSuccess == true
+      ↓Element [steps.XMLElementStep-1721295245350]: 
+        nodeName: attachment
+        ↓jAttribute [steps.AttributeStep-1721295245353]: 
+          expression: '"attachment"'
+          nodeName: type
+        ↓jAttribute1 [steps.AttributeStep-1721295245356]: 
+          expression: file_name
+          nodeName: name
+        ↓jAttribute11 [steps.AttributeStep-1721295245359]: 
+          expression: file_path
+          nodeName: local-url
+        ↓jAttribute2 [steps.AttributeStep-1721295245362]: 
+          expression: file_type
+          nodeName: content-type
+  ↓jElse [steps.ElseStep-1721295245365]: 
+    ↓Error_structure [steps.XMLErrorStep-1721295245368]: 
+      code: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: '-1'
+      details: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: JS
+            - →→: file_path + " does not exists. Check the file path is correct."
+      message: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: File does not exist at given path.
+    ↓Return [steps.ReturnStep-1721295245371]: 
+↓file_path [variables.RequestableVariable-1721295245374]: 
+  comment: Absolute path to the file to download.
+  value: 

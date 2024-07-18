@@ -56,7 +56,7 @@ Demo sequence to show the get_file sequence usage
 <th>name</th><th>comment</th>
 </tr>
 <tr>
-<td>file</td><td>Absolute path to the file to download.<br>
+<td>file_path</td><td>Absolute path to the file to download.<br>
 Or use './/' to a file path relative to project folder.<br>
 Or use './' to a file path relative to workspace folder.</td>
 </tr>
@@ -95,10 +95,10 @@ Action to trigger a file download in your Application.
 <th>name</th><th>comment</th>
 </tr>
 <tr>
-<td>file_path</td><td>Absolute file path to download from Convertigo Server filesystem.</td>
+<td>callback</td><td>Callback sequence. This is the parent sequence that finally calls the get_file sequence to perform the file download.</td>
 </tr>
 <tr>
-<td>target_sequence</td><td>Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.</td>
+<td>file</td><td>Absolute file path to download from Convertigo Server filesystem.</td>
 </tr>
 </table>
 

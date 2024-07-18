@@ -1,19 +1,17 @@
 comment: Demo sequence to show the get_file sequence usage
 ↓init_vars [steps.SimpleStep-1721295245288]: 
   expression: |
-    'if(file != ""){
+    'if(file_path != ""){
     	project_directory_path = context.getProjectDirectory().replace("\\", "/") + "/";
-    	if(file.indexOf(".//") != -1){
-    		file = project_directory_path + file.substring(3);
+    	if(file_path.indexOf(".//") != -1){
+    		file_path = project_directory_path + file_path.substring(3);
     	}
-    	else if(file.indexOf("./") != -1){
-    		file = project_directory_path + "../" + file.substring(3);;
+    	else if(file_path.indexOf("./") != -1){
+    		file_path = project_directory_path + "../" + file_path.substring(3);;
     	}
     }
     
-    file_path = file;
-    
-    log.debug("file: " + file_path);
+    log.debug("file_path: " + file_path);
     
     is_user_authenticated = true;'
 ↓jIf [steps.IfStep-1721295245291]: 
@@ -39,7 +37,7 @@ comment: Demo sequence to show the get_file sequence usage
           - →→: User session expired.
   ↓Return [steps.ReturnStep-1721295245297]: 
 ↓Call_Sequence [steps.SequenceStep-1721295245300]: 
-  sourceSequence: lib_downloadFile.get_file
+  sourceSequence: lib_download_file.get_file
   ↓file_path [variables.StepVariable-1721295245303]: 
     comment: Absolute path to the file to download.
     value: 
@@ -52,20 +50,20 @@ comment: Demo sequence to show the get_file sequence usage
           - ↑value: 1721295245300
         - java.lang.String: 
           - ↑value: ./document/*
-↓file [variables.RequestableVariable-1721295245309]: 
+↓file_path [variables.RequestableVariable-1721295245309]: 
   comment: |
     Absolute path to the file to download.<br>
     Or use './/' to a file path relative to project folder.<br>
     Or use './' to a file path relative to workspace folder.
   value: 
 ↓Test_Case_KO [core.TestCase]: 
-  ↓file [variables.TestCaseVariable-1721295245313]: 
+  ↓file_path [variables.TestCaseVariable-1721295245313]: 
     value: C:\pdf_repository\output1.pdf
 ↓Test_Case_KO1 [core.TestCase]: 
-  ↓file [variables.TestCaseVariable-1721295245317]: 
+  ↓file_path [variables.TestCaseVariable-1721295245317]: 
 ↓Test_Case_KO2 [core.TestCase]: 
-  ↓file [variables.TestCaseVariable-1721295245321]: 
+  ↓file_path [variables.TestCaseVariable-1721295245321]: 
     value: 
 ↓Test_Case_OK [core.TestCase]: 
-  ↓file [variables.TestCaseVariable-1721295245325]: 
+  ↓file_path [variables.TestCaseVariable-1721295245325]: 
     value: C:\pdf_repository\output.pdf

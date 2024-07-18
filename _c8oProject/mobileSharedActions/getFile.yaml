@@ -19,13 +19,13 @@ comment: Action to trigger a file download in your Application.
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.file_path","prefix":"","suffix":"","custom":"","useCustom":false}}
+        - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.file","prefix":"","suffix":"","custom":"","useCustom":false}}
   ↓target [ngx.components.UIControlVariable-1721298971739]: 
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.target_sequence","prefix":"","suffix":"","custom":"","useCustom":false}}
-↓file_path [ngx.components.UIStackVariable-1721296673363]: 
+        - MobileSmartSourceType: source:{"filter":"Action","project":"lib_download_file","input":"","model":{"data":[{"priority":1721296630512,"rootEvent":false,"pageLocals":false}],"path":"?.in?.vars?.callback","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓file [ngx.components.UIStackVariable-1721296673363]: 
   comment: Absolute file path to download from Convertigo Server filesystem.
-↓target_sequence [ngx.components.UIStackVariable-1721298935100]: 
-  comment: Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.
+↓callback [ngx.components.UIStackVariable-1721298935100]: 
+  comment: Callback sequence. This is the parent sequence that finally calls the get_file sequence to perform the file download.

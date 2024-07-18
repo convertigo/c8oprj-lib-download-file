@@ -75,12 +75,12 @@ title: First page
         beanData: '{"ionBean":"InvokeAction"}'
         stack: lib_download_file.Application.NgxApp.getFile
         tagName: InvokeSharedAction
-        ↓file_path [ngx.components.UIControlVariable-1721296865424]: 
+        ↓file [ngx.components.UIControlVariable-1721296865424]: 
           varValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'C:/pdf_repository/output.pdf'
-        ↓target_sequence [ngx.components.UIControlVariable-1721299449998]: 
+        ↓callback [ngx.components.UIControlVariable-1721299449998]: 
           comment: Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.
           varValue: 
             - xmlizable: 

@@ -3,15 +3,6 @@
 
 Library to trigger a file download from a sequence called with the .bin requester. 
 
-<details><summary><span style="color:DarkGoldenRod"><i>References</i></span></summary><blockquote><p>
-
-
-## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_downloadFile
-
-
-see [readme](https://github.com/convertigo/c8oprj-lib-downloadfile/tree/master#readme)
-</p></blockquote></details>
-
 <details><summary><span style="color:DarkGoldenRod"><i>Connectors</i></span></summary><blockquote><p>
 
 
@@ -51,7 +42,7 @@ comment
 </tr>
 <tr>
 <td>
-<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;file
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;file_path
 </td>
 <td>
 Absolute path to the file to download.<br>
@@ -130,18 +121,18 @@ comment
 </tr>
 <tr>
 <td>
-<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uistackvariable_16x16.png?raw=true "  alt="UIStackVariable" >&nbsp;file_path
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uistackvariable_16x16.png?raw=true "  alt="UIStackVariable" >&nbsp;callback
 </td>
 <td>
-Absolute file path to download from Convertigo Server filesystem.
+Callback sequence. This is the parent sequence that finally calls the get_file sequence to perform the file download.
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uistackvariable_16x16.png?raw=true "  alt="UIStackVariable" >&nbsp;target_sequence
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uistackvariable_16x16.png?raw=true "  alt="UIStackVariable" >&nbsp;file
 </td>
 <td>
-Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.
+Absolute file path to download from Convertigo Server filesystem.
 </td>
 </tr>
 </table>

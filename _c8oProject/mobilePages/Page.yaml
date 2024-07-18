@@ -79,7 +79,7 @@ title: First page
           varValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:'C:/pdf_repository/output.pdf'
+              - MobileSmartSourceType: script:'.//output.pdf'
         ↓callback [ngx.components.UIControlVariable-1721299449998]: 
           comment: Sequence to call. This is the sequence that finally calls the get_file sequence to perform the file download.
           varValue: 

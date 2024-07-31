@@ -30,6 +30,7 @@ comment: Private sequence to be called from a parent sequence. The parent sequen
         'isSuccess = false;
         file_type = "application/octet-stream";
         try {
+        	file_path = com.twinsoft.convertigo.engine.Engine.theApp.filePropertyManager.getFilepathFromProperty(file_path, context.projectName);
         	source = java.nio.file.Paths.get(file_path);
         	log.debug("source: "+source);
         	

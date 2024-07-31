@@ -15,7 +15,7 @@
     
     '
   corsOrigin: =Origin
-  version: 1.0
+  version: 1.1
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓demo_lib_usage [sequences.GenericSequence]: 🗏 sequences/demo_lib_usage.yaml
   ↓get_file [sequences.GenericSequence]: 🗏 sequences/get_file.yaml

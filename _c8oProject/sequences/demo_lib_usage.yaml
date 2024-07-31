@@ -1,21 +1,6 @@
 comment: Demo sequence to show the get_file sequence usage
-↓init_vars [steps.SimpleStep-1721295245288]: 
-  expression: |
-    'if(file_path != ""){
-    	project_directory_path = context.getProjectDirectory().replace("\\", "/") + "/";
-    	if(file_path.indexOf(".//") != -1){
-    		file_path = project_directory_path + file_path.substring(3);
-    	}
-    	else if(file_path.indexOf("./") != -1){
-    		file_path = project_directory_path + "../" + file_path.substring(3);;
-    	}
-    }
-    
-    log.debug("file_path: " + file_path);
-    
-    is_user_authenticated = true;'
 ↓jIf [steps.IfStep-1721295245291]: 
-  condition: '!is_user_authenticated'
+  condition: file_path != ".//output.pdf"
   ↓Error_structure [steps.XMLErrorStep-1721295245294]: 
     code: 
       - xmlizable: 
@@ -23,24 +8,17 @@ comment: Demo sequence to show the get_file sequence usage
         - SmartType: 
           - ↑mode: PLAIN
           - →→: '-1'
-    details: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: Your session has expired. Please reconnect.
     message: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
         - SmartType: 
           - ↑mode: PLAIN
-          - →→: User session expired.
+          - →→: Not authorized file.
   ↓Return [steps.ReturnStep-1721295245297]: 
 ↓Call_Sequence [steps.SequenceStep-1721295245300]: 
   sourceSequence: lib_download_file.get_file
   ↓file_path [variables.StepVariable-1721295245303]: 
     comment: Absolute path to the file to download.
-    value: 
 ↓Copy [steps.XMLCopyStep-1721295245306]: 
   sourceDefinition: 
     - xmlizable: 
@@ -58,12 +36,7 @@ comment: Demo sequence to show the get_file sequence usage
   value: 
 ↓Test_Case_KO [core.TestCase]: 
   ↓file_path [variables.TestCaseVariable-1721295245313]: 
-    value: C:\pdf_repository\output1.pdf
-↓Test_Case_KO1 [core.TestCase]: 
-  ↓file_path [variables.TestCaseVariable-1721295245317]: 
-↓Test_Case_KO2 [core.TestCase]: 
-  ↓file_path [variables.TestCaseVariable-1721295245321]: 
-    value: 
+    value: .//notExist.pdf
 ↓Test_Case_OK [core.TestCase]: 
   ↓file_path [variables.TestCaseVariable-1721295245325]: 
-    value: C:\pdf_repository\output.pdf
+    value: .//output.pdf

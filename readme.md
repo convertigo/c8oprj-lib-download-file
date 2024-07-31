@@ -42,13 +42,13 @@ For more technical informations : [documentation](./project.md)
      <tr><td>To contribute</td><td>
 
      ```
-     lib_download_file=https://github.com/convertigo/c8oprj-lib-download-file.git:branch=master
+     lib_download_file=git@github.com:convertigo/c8oprj-lib-download-file.git:branch=master
      ```
      </td></tr>
      <tr><td>To simply use</td><td>
 
      ```
-     lib_download_file=https://github.com/convertigo/c8oprj-lib-download-file/archive/master.zip
+     lib_download_file=git@github.com:convertigo/c8oprj-lib-download-file/archive/master.zip
      ```
      </td></tr>
     </table>
